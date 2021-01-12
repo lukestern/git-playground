@@ -8,8 +8,8 @@ def CheckAndCalculate(input):
         print(Calc(parameters[1], parameters[2], parameters[3]))
 
 def CheckCalcParameters(parameters):
-    if parameters[0] not in ['/', 'x', '+', '-', '^']:
-         raise ValueError("First argument must be an operation:\n Divde: '/'\n Multiply: 'x'(or '*')\n Add:'+'\n Subtract '-'\n Power: '^'")
+    if parameters[0] not in ['/', 'x', '+', '-', '%', '^']:
+         raise ValueError("First argument must be an operation:\n Divde: '/'\n Multiply: 'x'(or '*')\n Add:'+'\n Subtract '-'\n Modulo: '%'\n Power: '^'")
 
 def Calc(op, a, b):
     a = int(a)
@@ -25,6 +25,9 @@ def Calc(op, a, b):
         return result
     elif op == '-':
         result = a - b
+        return result
+    elif op == '%':
+        result = a % b
         return result
     elif op == '^':
         result = a ** b
